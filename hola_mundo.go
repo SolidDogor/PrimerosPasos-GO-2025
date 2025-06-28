@@ -1,9 +1,9 @@
 package main
 
 import (
+	"container/list"
 	"fmt"
 	"reflect"
-    "container/list"
 )
 
 func main() {
@@ -102,12 +102,43 @@ func main() {
 	myMap2 := map[string]int{"Alejandro": 21, "Peter": 52, "Adrian": 28}
 	fmt.Println(myMap2)
 
-    //List
+	//List
 
-    myList := list.New()
-    myList.PushBack(1)
-    myList.PushBack(2)
-    myList.PushBack(3)
-    fmt.Println(myList.Back().Value)
+	myList := list.New()
+	myList.PushBack(1)
+	myList.PushBack(2)
+	myList.PushBack(3)
+	fmt.Println(myList.Back().Value)
 
+	//Bucles
+
+	for index := 0; index < len(myArray); index++ {
+		fmt.Println(myArray[index])
+	}
+
+	for key, value := range myMap {
+		fmt.Println(key, value)
+	}
+
+	for index, value := range myArray {
+		fmt.Println(index, value)
+	}
+
+	//Funcion
+
+	fmt.Println(myFunction())
+
+	//Estructura
+
+	type MyStruct struct {
+		name string
+		age  int
+	}
+
+	myStruct := MyStruct{"Alejandro", 21}
+	fmt.Println(myStruct)
+}
+
+func myFunction() string {
+	return "Funcion que devuelve string"
 }
