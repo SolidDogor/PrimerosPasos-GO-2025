@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"reflect"
+    "container/list"
 )
 
 func main() {
@@ -78,5 +79,35 @@ func main() {
 	} else {
 		fmt.Println("El valor no es 10")
 	}
+
+	//Arreglos
+
+	var myArray [3]int
+	myArray[0] = 1
+	myArray[1] = 2
+	myArray[2] = 3
+	//myArray[3] = 4 -> ERROR!
+	fmt.Println(myArray[2])
+	//fmt.Println(myArray[3]) -> ERROR!
+
+	//Map
+
+	myMap := make(map[string]int)
+	myMap["Alejandro"] = 21
+	myMap["Peter"] = 52
+	myMap["Adrian"] = 28
+	fmt.Println(myMap)
+	fmt.Println(myMap["Alejandro"])
+
+	myMap2 := map[string]int{"Alejandro": 21, "Peter": 52, "Adrian": 28}
+	fmt.Println(myMap2)
+
+    //List
+
+    myList := list.New()
+    myList.PushBack(1)
+    myList.PushBack(2)
+    myList.PushBack(3)
+    fmt.Println(myList.Back().Value)
 
 }
